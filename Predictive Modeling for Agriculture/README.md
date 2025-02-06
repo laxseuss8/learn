@@ -1,23 +1,95 @@
-# Analyzing-a-dataset-using-SQL
+##Crop Recommendation System using Soil Metrics
 
-## Overview
-This project explores the mental health of international students studying at a Japanese university, focusing on factors like social connectedness, acculturative stress, and length of stay. The analysis aims to determine whether studying abroad impacts mental health and identifies potential correlations between stay duration and mental health metrics.
+##Project Overview
 
-## Key Features
-- **SQL Analysis**: Uses PostgreSQL to group data by length of stay and compute average depression, social connectedness, and stress scores.
-- **Jupyter Notebook**: Combines markdown explanations, data visualizations, and SQL queries for a comprehensive workflow.
-- **Findings**: Investigates trends such as how mental health metrics evolve with longer stays abroad.
+This project assists farmers in selecting the optimal crop based on soil metrics (Nitrogen, Phosphorous, Potassium, and pH levels). Using machine learning, a multi-class logistic regression model evaluates the predictive power of each soil feature to determine which has the greatest impact on crop selection. The model identifies Potassium (K) as the most critical feature for accurate predictions.
 
-## Dataset Description
-The dataset contains survey responses from students, including the following key columns:
-- `inter_dom`: Student type (international/domestic)
-- `japanese_cate`/`english_cate`: Language proficiency levels
-- `stay`: Length of stay in years
-- `todep`: Depression score (PHQ-9 test)
-- `tosc`: Social connectedness score (SCS test)
-- `toas`: Acculturative stress score (ASISS test)
-- 
-## Key Findings (Preview)
-- International students with shorter stays (1-2 years) show higher average depression scores (`todep`) compared to those with longer stays.
-- Social connectedness (`tosc`) tends to improve slightly with longer stays.
-- Acculturative stress (`toas`) peaks in the middle years of stays (e.g., 3-4 years).
+##Dataset
+
+File: soil_measures.csv
+
+##Features:
+
+N: Nitrogen content ratio
+
+P: Phosphorous content ratio
+
+K: Potassium content ratio
+
+pH: Soil pH valueTarget: crop (categorical, 22 unique crops)
+
+##Key Steps & Methodology
+
+1. Data Exploration & Preprocessing
+
+Checked for missing values (none found).
+
+Visualized feature distributions using boxplots.
+
+Split data into training (70%) and testing (30%) sets with stratification.
+
+2. Model Training & Evaluation
+
+Algorithm: Logistic Regression (multi-class).
+
+Evaluation Metric: Weighted F1-score (accounts for class imbalance).
+
+Each soil feature (N, P, K, pH) was tested individually to assess its predictive power.
+
+3. Results
+
+Feature
+
+F1-Score
+
+N
+
+0.135
+
+P
+
+0.161
+
+K
+
+0.258
+
+pH
+
+0.089
+
+##Conclusion: Potassium (K) is the most important feature for predicting the optimal crop.
+
+##Code Structure
+
+Data Loading & Exploration: Load dataset, inspect data, and visualize distributions.
+
+Feature Analysis: calculate_feature_performance() trains and evaluates models for each feature.
+
+Result Extraction: best_predictive_feature() identifies the top-performing feature.
+
+##Usage
+
+Requirements
+
+Python 3.8+
+
+Libraries: pandas, scikit-learn, seaborn, matplotlib
+
+Run the Code
+
+Ensure soil_measures.csv is in your working directory.
+
+Execute the Jupyter notebook to:
+
+Load and preprocess data.
+
+Train models and evaluate features.
+
+Output F1-scores and identify the best feature.
+
+#Insights for Farmers
+
+Focus on Potassium Levels: The model highlights Potassium as the strongest predictor of crop suitability. Farmers should prioritize measuring and optimizing K levels in their soil.
+
+Cost-Efficiency: By identifying the most impactful metric, this system reduces the need for expensive comprehensive soil tests.
