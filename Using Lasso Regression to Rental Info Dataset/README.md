@@ -1,15 +1,40 @@
-# NYC-Public-School-SAT-Performance-Analysis-using-Pandas
+# Lasso Regression to Rental Info Dataset
 
 ## Overview
-This project analyzes SAT performance data across New York City public schools to answer key questions about academic achievement. The SAT, a standardized test critical for college admissions, consists of three sections (math, reading, writing), each scored up to 800 points. This analysis helps stakeholders—such as policymakers, educators, and parents—understand school performance trends.
+This notebook contains an analysis of a DVD rental company. The goal is to determine how many days a customer will rent a DVD based on specific features. The company seeks insights to improve customer service and inventory management.
 
-## Key Questions Addressed
-1. **Top Math Schools**: Which schools have the highest average math scores (≥80% of the maximum score)?
-2. **Top Performing Schools**: Which 10 schools have the highest combined SAT scores?
-3. **Borough Variability**: Which NYC borough exhibits the most variability in total SAT scores?
+## Dependencies
+To run this notebook, install the following dependencies:
 
-## Dataset Overview
-The dataset `schools.csv` contains:
-- School names and borough locations
-- Average scores for math, reading, and writing
-- Percentage of students tested
+pip install pandas numpy matplotlib seaborn scikit-learn
+
+Or manually install:
+
+pandas
+
+numpy
+
+matplotlib
+
+seaborn
+
+scikit-learn
+
+##How to Use
+
+Clone the repository:
+
+git clone <repository-url>
+cd <repository-folder>
+
+Install dependencies (see above).
+
+Open the Jupyter Notebook:
+
+jupyter notebook notebook.ipynb
+
+Run the cells sequentially to execute the analysis.
+
+##Results
+
+The notebook provides insights into customer rental patterns and predicts rental durations based on data-driven modeling.
